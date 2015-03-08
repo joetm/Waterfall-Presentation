@@ -1,0 +1,17 @@
+<div class='subtitle center'>Sort the Steps</div>
+
+<div id="sortablesteps" class="row clearfix" />
+
+    <ul id="sortable1" class="col-xs-6 col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4 connectedSortable">
+        {% for item in sortlists.left %}
+        <li data-sp="{{item.sp}}">{{item.label}}</li><!--id="sort_{{loop.index}}"-->
+        {% endfor %}
+    </ul>
+
+    <ul id="sortable2" class="col-xs-6 col-md-5 col-lg-4 connectedSortable">
+        {% for item in sortlists.right %}
+        <li class="step-nd" data-sp="{{item.sp}}">{{item.label}}</li>
+        {% endfor %}
+    </ul>
+
+</div>

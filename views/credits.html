@@ -1,0 +1,14 @@
+<div id='credits'>
+
+<h3>Credits and Technologies used:</h3>
+
+{% for c in tplcontent %}
+	<h4>{{c.title}}</h4>
+	{% for item in c.listitems %}
+	<ul>
+	  <li>{% if item.link %}<a href="{{item.link}}" target="_blank">{{item.title}}</a>{% else %}{{item.title}}{% endif %}</li>
+	</ul>
+	{% endfor %}
+{% endfor %}
+
+</div>

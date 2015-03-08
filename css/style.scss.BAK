@@ -1,0 +1,309 @@
+/* custom styles, powered by SASS */
+
+$font-family: 'Indie Flower', cursive;
+
+$black : #000000;
+$almost-white: #FEFEFE;
+$white : #FFFFFF;
+$little-gray: #EEEEEE;
+
+$border-size: 2px;
+
+$defaultpadding: 4px;
+
+$headline: 36px;
+
+/**********************************/
+
+/* border-radius example from http://sass-lang.com/guide */
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin hover-highlight() {
+	background-color:#FF0000;
+	cursor:pointer;
+}
+
+/**********************************/
+
+html, body{
+	height:100%;
+}
+
+body{
+
+
+	color:$white;
+/*
+	overflow:hidden;
+*/
+	background-color: $black;
+	background-image:url(../img/blackboard-mckelvies.com.jpg);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-size:100%;
+	background-size:cover;
+	background-position:50% 50%;
+	
+	margin:0px 10px;
+}
+@media (max-width: 768px){
+	body{
+		margin:0px 5px;
+	}
+}
+
+h1.pagetitle{
+	text-align:center;
+	margin:15px auto 10px auto;
+	padding-right:6%;
+	font-family: $font-family;
+	font-size: $headline;
+	line-height: $headline;
+	min-height: $headline;
+}
+
+#wrapper{
+	margin-top:15px;
+
+	#box{
+		position:relative;
+		overflow:hidden;
+		padding:0px;
+		border:$border-size solid $almost-white;
+		height:600px;
+		/*
+		height:85%;
+		*/
+
+		@include border-radius($defaultpadding);
+	}
+
+	#sidebar{
+		border:$border-size solid $almost-white;
+	}
+
+	#pagelinks{
+		z-index:999;
+
+		margin-top:5px;
+
+		font-size:20px;
+		color:#FFF0F0;
+		font-family: $font-family;
+
+		padding-bottom:$defaultpadding;
+
+		.prev{
+			float:left;
+			margin-left:20px;
+			cursor:pointer;
+		}
+		.prev:before{
+			content: "< ";
+		}
+		.next{
+			float:right;
+			margin-right:20px;
+			cursor:pointer;
+
+		}
+		.next:after{
+			content: " >";
+		}
+	}
+}
+
+.navchapter{
+	font-size:20px;
+
+	height:40px;
+	width:100%;
+
+	padding:$defaultpadding;
+	margin:0px;
+	
+	border-bottom:1px solid $white;
+
+}
+	.locked{
+		@extend .navchapter;
+		color:#888888;
+		cursor:default;
+
+		margin-left:5px; /*make active chapter not jump*/
+	}
+	.active{
+		@extend .navchapter;
+		color:#FFFFFF;
+		cursor:default;
+		border-left:5px solid red;
+	}
+	.navchapter.unlocked:hover{
+		@include hover-highlight();
+	}
+
+
+#inputbox{
+	margin:20px 0px 0px 0px;
+	border:$border-size solid $almost-white;
+	height:40px;
+
+	display:none;
+
+	input{
+		width:100%;
+		background-color: $black;
+		border:0px;
+		font-size:20px;
+	}
+}
+
+#mini-menu{}
+
+.navbar-default .navbar-toggle .icon-bar {
+	color:$white;
+}
+
+/*--------*/
+/* Quizes */
+/*--------*/
+
+#canvas{
+	position:relative;
+	top:0px;
+	width:1000px;
+
+	.subtitle{
+		margin-top:10px;
+		font-size:30px;
+	}
+
+	.page{
+		position: absolute;
+		top: 0px;
+		/*background-color: #AAAA33;*/
+		padding:0px 15px;
+	}
+
+	.quiz_list{
+		list-style-type: none;
+		margin:0px;
+		padding:0px;
+		font-size:24px;
+
+		li{
+			margin-top:20px;
+			padding:0px;
+
+			label{
+				cursor:pointer;
+			}
+
+			input{
+				margin-right:10px;
+				color:#FFFF00;
+			}
+		}
+	}
+}
+#solvebutton{
+/*
+	position:absolute;
+	bottom:20px;
+*/
+	position:relative;
+	left:40%;
+	
+	padding:$defaultpadding+4 $defaultpadding;
+	min-width:200px;
+	font-size:24px;
+	line-height:24px;
+}
+
+/* FRONT PAGE */
+#page0{
+	text-align:center;
+
+	#main_title{
+		font-size:44px;
+		margin:40px auto 20px auto;
+	}
+	.subtext{
+		font-size:14px;
+		margin:10px auto;
+	}
+	.startbutton{
+		min-width:200px;
+		margin:80px auto 0px auto;
+	}
+}
+
+.hidden{
+	display:none;
+}
+
+#waterfall_img{
+	margin: 40px auto 0px auto;
+	max-width:70%;
+	max-height:500px;
+}
+	@media (max-width: 768px){
+		#waterfall_img{
+			max-width:100%;
+		}
+	}
+	@media (min-width: 992px){
+		#waterfall_img{
+			max-width:93%;
+		}
+	}
+	@media (min-width: 1200px){
+		#waterfall_img{
+			max-width:70%;
+		}
+	}
+
+#expl_box_templ{
+	position:absolute;
+	margin:0px;
+	border:1px solid $little-gray;
+	max-width:30%;
+	background-repeat:repeat;
+	background-image:url(../img/boxbg.png);
+
+	display:none;
+
+	.title{
+		padding:5px;
+		font-weight:bold;
+		width:100%;
+		border-bottom:1px solid $little-gray;
+	}
+	.content{
+		padding:5px;
+		width:100%;
+	}
+}
+	@media (max-width: 768px){
+		#expl_box_templ{
+			max-width:45%;
+		}
+	}
+	@media (min-width: 968px){
+		#expl_box_templ{
+			max-width:35%;
+		}
+	}
+	.topright{
+		top:20px;
+		right:20px;		
+	}
+	.bottomleft{
+		bottom:10px;
+		left:20px;
+	}

@@ -1,0 +1,22 @@
+{
+  "name": "Artefact",
+  "version": "0.0.1",
+  "author": "JO",
+  "private": true,
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-cssc": "*",
+    "grunt-htmlhint": "*",
+    "grunt-jslint": "*",
+    "grunt-nunjucks": "^0.1.4",
+    "matchdep": "*",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-uglify": "^0.6.0"
+  },
+  "dependencies": {
+    "nunjucks": "^1.1.0"
+  }
+}

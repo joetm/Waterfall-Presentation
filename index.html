@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>COMP6233 - Topics in Computer Science</title>
+
+	<!--bootstrap-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+	<!--google font: Indie Flower : http://fonts.googleapis.com/css?family=Indie+Flower -->
+	<link href='css/google-font.css' rel='stylesheet' type='text/css'>
+
+	<!--custom css-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+	<!--
+	<button id="mini-menu" type="button" class="visible-xs navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar">
+    	<span class="icon-bar"></span>
+    	<span class="icon-bar"></span>
+    	<span class="icon-bar"></span>
+	</button>
+	-->
+
+    <div id="growl">GROWL</div>
+
+	<div id="sidebar" class="clearfix"></div>
+
+	<h1 class="pagetitle clearfix">&nbsp;</h1>
+
+	<div id="wrapper" class="container-fluid clearfix">
+
+		<div class="row clearfix">
+
+			<div id="box" class="clearfix col-xs-12">
+
+				<div id="canvas"></div>
+
+			</div>
+
+			<div id="pagelinks" class="clearfix col-xs-12 col-sm-11 col-md-10">
+				<div class="prev" onclick="framework_ctrl.prev_page();" title="Previous">Previous</div>
+				<div class="next" onclick="framework_ctrl.next_page();" title="Next"></div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+	<!--jquery-->
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+	<!--jquery-ui-->
+	<script type="text/javascript" src="js/jquery-ui.min-custom.js"></script>
+
+    <!--D3-->
+    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+
+	<!--nunjucks templates-->
+	<script type="text/javascript" src="js/nunjucks-slim.min.js"></script>
+
+	<!--Internet Explorer detection plugin
+	jslint does not like this, but it is the only way to identify recent versions of IE
+	-->
+	<script type="text/javascript" src="app/detect-IE.js"></script>
+
+    <!--
+    <script src="./js/arbor.js"></script>
+    <script src="./js/arbor-tween.js"></script>
+    <script src="./js/arbor-graphics.js"></script>
+    -->
+
+	<!--main app-->
+	<script type="text/javascript" src="app/d3.js"></script>
+    <script type="text/javascript" src="prod/views/compiled.js"></script>
+	<script type="text/javascript" src="app/framework.js"></script>
+	<script type="text/javascript" src="app/app.js"></script>
+	<script type="text/javascript" src="app/content.js"></script>
+
+
+	<!--
+	Production-ready JS is here:
+	<script type="text/javascript" src="prod/js/app.min.js"></script>
+	<script type="text/javascript" src="prod/js/lib.min.js"></script>
+	-->
+
+</body>
+</html>

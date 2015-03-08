@@ -1,0 +1,12 @@
+<div class='subtitle'>{{title}}</div>
+
+<ul class="quiz_list clearfix">
+{% for key, lbl in questions %}
+	<li id='q_{{quiznum}}_{{key}}'>
+	<input name='quiz' type='radio' id='r{{quiznum}}_{{key}}' value='{{key}}' />
+	<label for='r{{quiznum}}_{{key}}'>{{lbl}}</label>
+	</li>
+{% endfor %}
+</ul>
+
+<button id='solvebutton{{quiznum}}' class='solvebutton btn btn-warning'>Solve</button>

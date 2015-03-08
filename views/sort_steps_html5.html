@@ -1,0 +1,42 @@
+<div class='subtitle center'>Sort the Steps</div>
+
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+
+<div id="sortablesteps" class="row clearfix" />
+
+    <ul id="html5_sortable1" class="col-xs-6 col-md-offset-1 col-md-5 col-lg-offset-2 col-lg-4">
+        <li id="sort_0" draggable="true" ondragstart="drag(event)" data-sp="0">System Requirements</li>
+        <li id="sort_0" draggable="true" ondragstart="drag(event)" data-sp="0">Operations</li>
+        <li id="sort_0" draggable="true" ondragstart="drag(event)" data-sp="0">Program Design</li>
+        <li id="sort_0" draggable="true" ondragstart="drag(event)" data-sp="0">Testing</li>
+        <li id="sort_0" draggable="true" ondragstart="drag(event)" data-sp="0">Coding</li>
+        <li id="sort_0" draggable="true" ondragstart="drag(event)" data-sp="0">Software Requirements</li>
+        <li id="sort_0" draggable="true" ondragstart="drag(event)" data-sp="0">Analysis</li>
+    </ul>
+
+    <ul id="html5_sortable2" class="col-xs-6 col-md-5 col-lg-4">
+        <li class="step-nd" data-sp="0">Project Start</li>
+        <li class="step-nd" draggable="true" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+        <li class="step-nd" data-sp="8">Project End</li>
+    </ul>
+
+</div>
